@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<GridPane fx:id="gpane" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+    <VBox spacing="10">
+        <HBox>
+        <HBox>
+            <Button fx:id="newBtn" onAction="#startEdit" prefWidth="60">NEW</Button>
+            <TextField fx:id="nameIn" />
+            <TextField fx:id="valueIn" />
+            <Button fx:id="addBtn" onAction="#refreshChart" prefWidth="42">ADD</Button>
+        </HBox>
+            <HBox alignment="CENTER"><Label id="welcome-text" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="383.0" textAlignment="RIGHT">PARETO CHART</Label></HBox>
+        </HBox>
+
+        <HBox>
+            <VBox>
+                <TableView fx:id="dataTbl" />
+            </VBox>
+
+            <StackPane fx:id="spane" prefWidth="845">
+                <HBox>
+                    <BarChart fx:id="chart">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="yAxis" side="LEFT" />
+                        </yAxis>
+                    </BarChart>
+                </HBox>
+                <HBox>
+                    <Box visible="false" width="45" />
+                    <LineChart fx:id="chart2">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM" fx:id="xAxis2" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="yAxis2" side="LEFT" />
+                        </yAxis>
+                    </LineChart>
+                </HBox>
+            </StackPane>
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="clearBtn" onAction="#clearChart" prefWidth="80">CLEAR</Button>
+            <Button fx:id="exportBtn" onAction="#exportChart" prefWidth="80">EXPORT</Button>
+        </HBox>
+    </VBox>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>
